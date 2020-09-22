@@ -1,0 +1,21 @@
+<!------------------------------header image -ken ------------------------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="https://via.placeholder.com/318x76.png" class="img-fluid a" alt="random image" />
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+            <div class="login_reg">
+                <div type="button" class="login_reg btn btn-sm btn-block btn-outline-primary create_btn">
+                    {% if not current_user.is_authenticated %}
+                    <a class="login_b"  href="{{ url_for('authentication.login')}}">LOGIN | REGISTER</a>
+                    {% else %}
+                    <a class="login_b" href="{{ url_for('authentication.logout')}}">LOGOUT</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
